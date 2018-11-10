@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* Cuando se le de un widsth a un elemento quede siempre del mismo tamaño*/
+    box-sizing: border-box;
+}
+:root{
+    /* Es la raíz del documento, entonces vamos a definir variables*/
+    --c-primario:#96CEB4 ;
+    --c-secundario:#FFEEAD;
+    --c-terciario:#FF6F69;
+    --c-claro: #FFCC5C;
+    --c-oscuro:#AAD8B0;
+    
+    /*Dimensión del iframe */
+    --iframe-width:650px;
+    --iframe-height:450px; 
+    
+
+
+}
+.contenedor{
+    background:wheat;
+    /* vh y vw es para que sea igual de largo y ancho a la página*/
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 100%;
+    /* La medida fr solo esta en grid */
+    grid-template-rows: auto  1fr 50px;
+    overflow-x: hidden;
+    font-family: 'Fahkwang', sans-serif;
+      
+}
+.header{
+    background: var(--c-primario);
+    grid-column: 1 / 2;
+    grid-row: 1 /2,
+    
+}
+.menu{
+    background: var(--c-terciario);
+    display: none;
+}
+.main{
+    background: var(--c-secundario);
+    grid-column: 1 / 2;
+    grid-row: 2 /3;
+}
+.footer{
+    background: var(--c-claro);
+    grid-column: 1 / 2;
+    grid-row: 3 /4;
+}
+/*Estilos del contenido principal */ 
+.main{
+    /* El em es un margen que toma como referencia el tamaño de la letra*/
+    padding: 1em;
+}
+/* los elementos inline es*/
+.main .instruccion{
+    margin: 0 auto;
+    background: var(--c-claro);
+    width: 90%;
+    padding: 5px;
+    border-radius:10px;
+
+}
+.main .instruccion .p{
+    margin:0;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.main .iinstruccion{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
+.main .contenedor-iframe{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--c-terciario);
+    overflow-x: auto;
+}
+.main .contenedor-iframe iframe{
+    width: var(--iframe-width);
+    height: var(--iframe-height);
+}
+.nav{
+    /* */
+    position: relative;
+}
+.nav .nav-links li{
+    text-align: center;
+    margin:0 auto;
+    color: white;
+
+}
+.nav .nav-links li:hover{
+ background: #67CEB4;
+}
+.nav .nav-links li a{
+    display: block;
+    padding: 5px;
+    font-weight: bold;
+}
+.nav .menu-open{
+    display: inline-block;
+    margin: 5px auto 5px 15px;
+    
+}
+
+.nav .nav-toggle{
+    position: absolute;
+    top:5px;
+    right:15px;
+    }
+.lista-links{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+.lista-links li a{
+    text-decoration: none;
+}
+.icono-grande{
+    font-size:25px;
+    cursor:pointer;
+}
