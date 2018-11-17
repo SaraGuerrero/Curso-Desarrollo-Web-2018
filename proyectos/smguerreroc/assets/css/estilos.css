@@ -6,11 +6,11 @@
 }
 :root{
     /* Es la raíz del documento, entonces vamos a definir variables*/
-    --c-primario:#96CEB4 ;
-    --c-secundario:#FFEEAD;
-    --c-terciario:#FF6F69;
-    --c-claro: #FFCC5C;
-    --c-oscuro:#AAD8B0;
+    --c-primario:#B84D56 ;
+    --c-secundario:#F7E29C;
+    --c-terciario:#FCBC80;
+    --c-claro: #EA9674;
+    --c-oscuro:#BB6F6B;
     
     /*Dimensión del iframe */
     --iframe-width:650px;
@@ -29,7 +29,7 @@
     /* La medida fr solo esta en grid */
     grid-template-rows: auto  1fr 50px;
     overflow-x: hidden;
-    font-family: 'Fahkwang', sans-serif;
+    font-family: 'Old Standard TT', serif;
       
 }
 .header{
@@ -40,8 +40,7 @@
 }
 .menu{
     background: var(--c-terciario);
-    display: none;
-}
+    }
 .main{
     background: var(--c-secundario);
     grid-column: 1 / 2;
@@ -72,7 +71,7 @@
     text-align: center;
     font-weight: bold;
 }
-.main .iinstruccion{
+.main .instruccion{
     margin: 0;
     padding: 0;
     text-align: center;
@@ -96,16 +95,17 @@
 .nav .nav-links li{
     text-align: center;
     margin:0 auto;
-    color: white;
+    
 
 }
 .nav .nav-links li:hover{
- background: #67CEB4;
+ background: #85454A;
 }
 .nav .nav-links li a{
     display: block;
     padding: 5px;
     font-weight: bold;
+    color: white;
 }
 .nav .menu-open{
     display: inline-block;
@@ -129,4 +129,127 @@
 .icono-grande{
     font-size:25px;
     cursor:pointer;
+}
+.footer{
+    color:#B84D56;
+    font-weight: bold;
+    /*Aquí se centra el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    position: fixed;
+    top:0;
+    width: 250px;
+    height: 100vh;
+    /*Se agrega para que no se junten el color de fondo y el color del menú */
+    border-right:1px solid #F2A334 ;
+    left:-300px;
+    transition: left 0.3s ease-in-out;
+}
+/*Cuando no hay espacio entre las clases, quiere decir que se estan seleccionando elementos que tienen ambas clases*/
+.menu.mostrar{
+    left: 0;
+}
+.menu .menu-links li{
+    border-bottom: 1px solid #F2A334;
+    transition: background-color 0.5s;
+}
+
+.menu .menu-links li:hover{
+    background:#F2A334;
+}
+.menu .menu-links li a{
+    display: block;
+    padding: 5px 10px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+.menu .menu-close{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    background: red;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+.menu .menu-close:hover{
+    background: rgba(211,0,0);
+}
+
+@media screen and (min-width: 900px){
+    /* Removemos los botones  paramóviles de la barra de navegación*/
+    .nav .menu-open, .nav .nav-toggle{
+        display: none;
+    }
+    /* Adecuamos la barra de navegación y su contenido*/
+    .nav .nav-links{
+        height: 50px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav .nav-links li{
+        height: 80%;
+        margin: 0;
+        margin-left: 20px;
+        border:1px solid var(--c-terciario);
+        border-radius: 10px;
+    }
+
+    .nav .nav-links li a{
+        height: 100%;
+        padding:0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*Para el contenedor definimos dos columnas, una de 300px y la otra que tome el espacio que sobra  y se definen las mismas tres filas*/
+    .contenedor{
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        /* El auto significa que la altura depende del contenido*/
+        grid-template-rows: auto 1fr 50px;
+    }
+
+    .header{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    .menu{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .main{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    .footer{
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    .menu{
+        position: static;
+        width: auto;
+        height: auto;
+        transition: none;
+        border-top:1px solid var(--c-terciario);
+        border-bottom: 1px solid var(--c-terciario); 
+    }
+
+    .menu .menu-close{
+        display: none;
+    }
+    .main .instriccion, .main .contenedor-iframe{
+        width: var(--iframe-width);
+    }
 }
