@@ -58,7 +58,7 @@
 }
 /* los elementos inline es*/
 .main .instruccion{
-    margin: 0 auto;
+    margin: 10px auto;
     background: var(--c-claro);
     width: 90%;
     padding: 5px;
@@ -88,14 +88,20 @@
     width: var(--iframe-width);
     height: var(--iframe-height);
 }
-.nav{
+.nav {
     /* */
     position: relative;
+}
+.nav .nav-links{
+    display: none;
+}
+.nav .nav-links.mostrar{
+ display: block;
 }
 .nav .nav-links li{
     text-align: center;
     margin:0 auto;
-    
+    transition: background 0.5s;
 
 }
 .nav .nav-links li:hover{
@@ -185,6 +191,10 @@
 
 @media screen and (min-width: 900px){
     /* Removemos los botones  paramóviles de la barra de navegación*/
+    #iframe{
+        background: white;
+    }
+    
     .nav .menu-open, .nav .nav-toggle{
         display: none;
     }
@@ -249,7 +259,7 @@
     .menu .menu-close{
         display: none;
     }
-    .main .instriccion, .main .contenedor-iframe{
+    .main .instruccion, .main .contenedor-iframe{
         width: var(--iframe-width);
     }
 }

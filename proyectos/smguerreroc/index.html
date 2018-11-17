@@ -20,11 +20,11 @@
                     <span class="menu-open icono-grande" id="btn-menu-open">
                             <i class="fe fe-list-bullet"></i>
                     </span>
-                <span class="nav-toggle icono-grande" id="btn-nav-togle">
+                <span class="nav-toggle icono-grande" id="btn-nav-toggle">
                     <i class="fe fe-bar"></i>
                 </span>
                 <!--Un elemento puede tener varias clases, estas se deben separar por espacios-->
-                <ul class="nav-links lista-links">
+                <ul class="nav-links lista-links" id="nav-links">
                     <LI><a href="#"> Inicio</a></LI>
                     <LI><a href="#">Contactos</a></LI>
                     <LI><a href="#">Dudas</a></LI>
@@ -33,11 +33,11 @@
             </nav>
 
         </header>
-        <div class="menu" id="menu-lateral">
+        <div class="menu" id="menu-lateral" >
             <span class="menu-close" id="btn-menu-close">
                 <i class="fe fe-close"></i>
             </span>
-            <ul class=" menu-links lista-links">
+            <ul class=" menu-links lista-links" id="menu-links">
                 <li><a href="#">Esquemas</a></li>
                 <li><a href="#">Herramientas</a></li>
                 <li><a href="#">Contenido</a></li>
@@ -52,7 +52,7 @@
             </div>
             <div class="contenedor-iframe">
                 <!-- sirve para referir páginas-->
-                <iframe src="https://es.crossfire.z8games.com/main.html"></iframe>
+                <iframe name="main-iframe" src="https://es.crossfire.z8games.com/main.html" id="iframe"></iframe>
 
             </div>
             
@@ -63,6 +63,9 @@
             </p>
         </footer>
     </div>
+    <!-- Lo pone al final para que no lo intente leer sin haber cargado la página-->
+    <script src="assets/js/script.js">
+    </script>
 </body>
 
 </html>
